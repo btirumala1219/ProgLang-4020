@@ -1,0 +1,5 @@
+fib n = sum (go n 1 2)
+  where
+  go n f s
+    | (f+s) > n = []
+    | otherwise = if even (f+s) then(f+s) : go n s (f+s) else go n s (f+s)

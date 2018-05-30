@@ -1,1 +1,48 @@
-Test
+TEST
+1) List comprehension with helper functions
+2) Main function must be recursive
+
+Lambdas - no name functions, sole purpose of using it once for some higher order function. (\
+
+numLongChains :: Int
+numLongChains = length(filter (\xs -> length xs > 15) (map chain [1..100]))
+
+Lambdas are just expressions, thats why we can pass them. Expression (\xs -> length xs > 15) just returns boolean if length is greater than 15
+
+function to convert 45 to list of [4,5]
+
+GetSumOfDigitsSquared
+	First, get integer list of digits
+	Second, square each number in list
+	Third, sum the digits squares
+
+1)
+	convertAsciiToIntegerList [] = []
+	convertAsciiToIntegerList (x:xs) = ((fromEnum x)-48): convertAsciiToIntegerList
+
+LOOK IN NOTES----REPRESENTATIVE OF THIS
+Break it down into other functions
+
+--MODULE--
+A haskell module is a collection of related functions.
+All the functions so far are a part of the prelude module
+Syntax --import "modulename"
+Data.list is a module with useful list functions. (A lot of this is in prelude)
+	adds to global space. nub is a useful function
+import Data.List(nub,sort) -- chooses what functions u want to import so saves memory and 		doesnt conflict names
+import Data.List hiding(nub) -- imports all but nub
+import qualified Data.Map as M makes you address the module before using a function
+	-- to use data.Maps filter function u use M.filter
+
+intersperse function puts an element between each
+Prelude> intersperse '.' "MONKEY" ===> "M.O.N.K.E.Y"
+
+intercalculate - does same but for lists
+
+Transpose - rewrites for lists grouping
+
+concat - makes list of lists into one list
+
+Nothing is returned if something doesnt exist
+`union` combines two strings (U)
+

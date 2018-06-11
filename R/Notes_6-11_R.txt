@@ -1,0 +1,133 @@
+getwd() gets working directory
+# to comment
+
+<- is used to assign, variables can be reassigned
+	Notes about every line will come as ## comment
+
+--Everything is a vector, list, matrix, dataframe etc..
+--Everything starts with 1 instead of 0. 
+
+: is used to create int sequences
+	x <- 1:5 
+	x = [1,2,3,4,5] // a vector from 1 to 5
+
+5 basic atomic types in R / Classes of Objects
+	character
+	numeric (real #)
+	integer
+	complex
+	logical (T/F)
+
+Most basic type is a vector
+	can only contain objects of same type
+	BUT list can be objects of different classes
+
+Numbers --->
+generally treated as numeric objects (double precision real #s)
+If you want an integer, need to specify the L suffix
+	Entering 1 gives u number, 1L gives u integer
+Dividing by 0 gives you inf
+NaN = not a number
+
+Attributes --->
+	names, dimnames (name dimensions)
+	dimensions (matrices, arrays)
+	class
+	length
+	other user-defined attributes/metadata
+attributes can be found with attributes() function
+
+c() can be used to create vectors of objects
+	x <- c(TRUE,FALSE)	
+	x <- c(9:29)
+
+vector function can be used
+x <- vector("numeric", length = 10) //init value 0s
+
+If you put different types in a vector, coercion occurs and it forces it to be of same type
+x <- c(1.7,"a") /// Will coerce 1.7 to a string x = "1.7" "a"
+
+Explicitly coerce them using as.* function
+x <- 0:6 //is an integer
+as.numeric(x) //makes them numbers
+
+Lists are a special type of vector that can contain elements of different classes. 
+	They are vectors of vectors kinda 2D arrays, so will print out each element in their own line
+
+Matrices-->
+Vectors with a dimension attribute. Can name and set properties to the dims m<- matrix(1:6, nrow = 2, ncol = 3) 
+m = 1 3 5
+    2 4 6
+You can make a vector into a matrix by adding the dim attribute
+	can use cbind() and rbind() to change if it fills cols or rows first
+
+Factors-->
+used to represent categorical data //kinda like an int vector with each value having a label
+So it may appear as a list of categorical data, but each value is assigned an int
+//behind the scenes value
+levels -- different actual types
+
+Missing Values--->
+denoted by NA or NaN for undefined math operations
+	is.na() used to test objects if they are NA
+	is.nan() used to test for NaN
+	NA values have a class, so int NA, num NA etc
+	A NaN is a type of NA.
+
+Data Frames -->
+Special type of list to store tabular data.
+	Every element of the list has to have same length
+	similar to spreadsheets
+read.csv loads data into dataframe or read.table
+can be converted to matrix using data.matrix()
+each row and col has their own properties --- row.names(data)
+
+Can add names to any property of data
+$a returns only the value, instead of the name
+
+Reading Data -->
+	read.table
+	readLines for reading lines of text
+	source for reading in R code files (dump to write)
+	dget for reading in R code files (dput to write)
+	load for reading saved workspace
+	unserialize for reading R objects in binary form
+
+large data sets might be a problem to load everything into memory
+
+Subnetting --> 
+How we get to parts of the data
+Matrices can be subsetted by x[1,2]
+	x[1,] gives you everthing in the first row
+use drop = FALSE to override and make a 1x* matrix instead of a normal vector
+
+Partial Matching -->
+you can use the beginning of names to match to what it is referring to
+
+Vectorized Operations-->
+goes through piece by piece and performs relevant operation
+for matrix mult, if you actually want to multiply use %*%
+
+dat[c(1,2),] #gets the first two rows of data frame
+
+mean(dat$colName,na.rm = TRUE) # returns mean of values in that column that do exist
+
+subset(dat, month == 6) returns subset of data when month is 6
+
+control structure-->
+	if else, testing a condition
+	for, execute a loop # of times
+	while, do while
+	repeat, keep going until break condition.
+
+--not required to have an else
+for( i in 1:10 ) iterates 11 values, 1 thru 10
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+MyData <- read.csv(file="Rdata.csv", header=TRUE, sep=",")
+june <- subset(MyData, Month == 6)
+div2 <- subset(june, Day%%2 == 0)
+wind <- subset(div2, Wind>9)
+ans <- mean(wind$Wind,na.rm = TRUE)

@@ -37,3 +37,7 @@ RAssignment1Problem2 <- function()
 
   ans
 }
+
+
+RAssignment1Problem1()
+RAssignment1Problem2()

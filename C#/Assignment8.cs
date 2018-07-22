@@ -3,26 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-					
+
 public class Problem2
 {
   public static IEnumerable<int> merge(IEnumerable<int> input1, IEnumerable<int> input2, IEnumerable<int> input3)
   {
-	  
-	  foreach( int i in input1 )
-	  {
-		  Console.WriteLine(i);
-	  }
-	  
-	  
-	  
-	  
+
 	  List<int> ans1 = new List<int>();
 	  List<int> ans2 = new List<int>();
 	  List<int> ans3 = new List<int>();
 	  foreach( int i in input1){
 		  if(i%3 == 0){
-			Console.WriteLine("-----" + i);  
 		  	ans1.Add(i);
 		  }
 	  }
@@ -36,19 +27,9 @@ public class Problem2
 		  	ans3.Add(j);
 		  }
 	  }
-	  
-	  Console.WriteLine("");
-	  
-	  foreach( int i in ans1 )
-	  {
-		  Console.WriteLine(i);
-	  }
-	  
 	  var intersect = ans1.Intersect(ans2);
-	
 	  var ans = intersect.Intersect(ans3);
-		  
-	  
+
 	  return ans;
   }
 
@@ -63,6 +44,5 @@ public class Problem2
 	  {
 		  Console.WriteLine(i);
 	  }
-  }	
+  }
 }
-

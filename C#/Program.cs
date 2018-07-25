@@ -10,8 +10,17 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            int quarterCount = data.Length / thrd.Length;
             DateTime start = DateTime.Now;
+
+            calcValues(0,10000000);
+            TimeSpan ts = DateTime.Now - start;
+
+            Console.WriteLine("Sequentially, calc takes " + "{0}" + " milliseconds to run", ts.TotalMilliseconds);
+
+            start = DateTime.Now;
+
+            int quarterCount = data.Length / thrd.Length;
+            
             int j = 0;
             for(int i = 0; i<thrd.Length; i++)
             {
@@ -23,9 +32,12 @@ namespace ConsoleApp1
             {
                 t.Join();
             }
-  
-            TimeSpan ts = DateTime.Now - start;
-            Console.WriteLine("{0}", ts.TotalMilliseconds);
+            
+
+            //calcValues(0,10000000);
+
+            TimeSpan tts = DateTime.Now - start;
+            Console.WriteLine("Multithreaded, calc takes " + "{0}" + " milliseconds to run", tts.TotalMilliseconds);
 
         }
 
